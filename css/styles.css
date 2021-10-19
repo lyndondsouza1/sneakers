@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style: none;
+}
+
+body {
+  list-style: none;
+  list-style-type: none;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: white;
+  /* Black fallback color */
+  background-color: white;
+  /* Black w/opacity */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 0;
+  /* 25% from the top */
+  width: 100%;
+  /* 100% width */
+  /* Centered text/links */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  font-weight: 700;
+  padding: 8px;
+  padding-left: 20px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: black;
+  display: block;
+  /* Display block instead of inline */
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  font-size: 2rem;
+}
+
+#navbarNav {
+  display: none;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 0rem 1rem 0rem;
+  margin: auto;
+  width: 100%;
+}
+
+#brand {
+  padding: 20px 20px 20px;
+}
+
+#burger {
+  padding: 20px 20px 20px;
+}
+
+.cart {
+  display: inline-block;
+  margin-left: auto;
+}
+
+.avatar {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+  margin-top: 20px;
+}
+
+#product-description {
+  margin-bottom: 2rem;
+}
+
+#product-description h4 {
+  height: 10px;
+  color: #ff7d1a;
+  font-size: small;
+  margin-top: 10px;
+  word-spacing: 10px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+#product-description h1 {
+  font-weight: 700;
+  font-size: 32px;
+  margin-top: 1rem;
+}
+
+#product-description p {
+  font-size: 16px;
+}
+
+#product-description #price-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#product-description #price-list li {
+  color: black;
+  margin: 0;
+  padding-top: 0px;
+}
+
+#product-description #discount {
+  color: #ff7d1a;
+  border-radius: 10px;
+  line-height: 70px;
+  height: 30px;
+  font-size: 16px;
+  padding: 7px 16px 7px;
+  margin: 7px 16px 7px;
+  background-color: #ffede0;
+}
+
+#product-description #orig-price {
+  text-decoration: line-through;
+  opacity: 0.7;
+  line-height: 70px;
+}
+
+#product-description #plus-minus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid #f7f8fd;
+  border-radius: 10px;
+  background-color: #e7e8e9;
+}
+
+#product-description #plus-minus li {
+  padding: 10px;
+}
+
+#product-description #plus-minus button {
+  border: none;
+}
+
+#product-description #Addtocart {
+  color: white;
+  background-color: #ff7d1a;
+  font-size: small;
+  height: 52px;
+  text-align: center;
+  border-radius: 10px;
+  -webkit-box-shadow: 9px 25px 27px -20px #ff7d1a;
+          box-shadow: 9px 25px 27px -20px #ff7d1a;
+}
+
+#product-description #Addtocart img {
+  fill: white;
+  color: white;
+  padding-right: 20px;
+}
+
+.carousel-indicators {
+  position: static;
+  margin-top: 20px;
+  display: none;
+  padding: 0;
+}
+
+.carousel-indicators li {
+  display: block;
+  height: 100px;
+  width: 100px;
+  padding: 0;
+}
+
+.carousel-indicators li::before {
+  height: 100px;
+  width: 100px;
+  display: block;
+  padding: 0;
+}
+
+.carousel-indicators li::after {
+  height: 100px;
+  width: 100px;
+  display: block;
+  padding: 0;
+}
+
+.carousel-indicators li img {
+  display: block;
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 0;
+}
+
+.carousel-indicators .active {
+  opacity: 0.5;
+  border: 2px solid #ff7d1a;
+  border-radius: 10px;
+  padding: 0;
+}
+
+.carousel-control-prev {
+  opacity: 1;
+  margin: 20px;
+}
+
+.carousel-control-prev .prev-btn {
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  opacity: 1;
+  padding: 10px;
+}
+
+.carousel-control-next {
+  opacity: 1;
+  margin: 20px;
+}
+
+.carousel-control-next .next-btn {
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  opacity: 1;
+  padding: 10px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (min-width: 900px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+  header {
+    padding: 2rem 10rem 0rem;
+    margin: auto;
+    width: 100%;
+  }
+  #brand {
+    padding: 40px 40px 40px;
+  }
+  .cart {
+    display: inline-block;
+    margin-left: auto;
+  }
+  .avatar {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    margin-top: 20px;
+  }
+  #burger {
+    display: none;
+    padding: 20px 20px 20px;
+  }
+  #navbarNav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    color: black;
+    padding: 20px 20px 20px;
+  }
+  .carousel-indicators {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .carousel-control-next {
+    display: none;
+  }
+  .carousel-control-prev {
+    display: none;
+  }
+  #price-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .carousel-inner .carousel-item img {
+    border: 1px solid white;
+    border-radius: 15px;
+  }
+  #desc-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
